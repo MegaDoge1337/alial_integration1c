@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  integration1c:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: "alial/integration1c:v2"
+    ports:
+      - 8082:8082
+    volumes:
+      - "./logs:/app/logs"
+    networks:
+      - sungero_network
+
+networks:
+  sungero_network:
+    external: true
